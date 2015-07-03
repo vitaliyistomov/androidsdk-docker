@@ -1,6 +1,10 @@
-FROM ubuntu:14.04
+FROM ubuntu:14.04.2
 
-MAINTAINER Jacek Marchwicki "jacek.marchwicki@gmail.com"
+# copied from
+#MAINTAINER Jacek Marchwicki "jacek.marchwicki@gmail.com"
+MAINTAINER Inbot "info@inbot.io"
+
+RUN apt-get update && apt-get upgrade
 
 # Install java7
 RUN apt-get install -y software-properties-common && add-apt-repository -y ppa:webupd8team/java && apt-get update
