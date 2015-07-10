@@ -45,4 +45,5 @@ RUN apt-get clean
 VOLUME ["/android-build"]
 WORKDIR /android-build
 
+USER jenkins
 CMD ./build.sh
