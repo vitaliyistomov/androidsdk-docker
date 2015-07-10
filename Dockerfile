@@ -46,4 +46,4 @@ VOLUME ["/android-build"]
 WORKDIR /android-build
 
 # Create jenkins user and run the build script from it's name
-CMD groupadd --gid ${DEV_GROUPS} ${DEV_GROUP} && useradd --gid ${DEV_GROUPS} --uid ${DEV_UID} ${DEV_USER} && mkdir -p ${HOME_DIR}/${DEV_USER} && chown ${DEV_USER}:${DEV_GROUP} ${HOME_DIR}/${DEV_USER} && sudo -H -u ${DEV_USER} bash -c ./build.sh
+CMD groupadd --gid ${DEV_GROUPS} ${DEV_GROUP} && useradd --gid ${DEV_GROUPS} --uid ${DEV_UID} ${DEV_USER} && mkdir /home/${DEV_USER} && chown ${DEV_USER}:${DEV_GROUP} ${HOME_DIR}/${DEV_USER} && sudo -H -u ${DEV_USER} bash -c ./build.sh
