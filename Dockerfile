@@ -45,7 +45,7 @@ RUN apt-get clean
 VOLUME ["/android-build"]
 WORKDIR /android-build
 
-RUN groupadd -r jenkins \
-  && useradd -r -g jenkins jenkins
+RUN groupadd --system jenkins \
+  && useradd --home /var/lib/jenkins --system --gid jenkins jenkins
 USER jenkins
 CMD ./build.sh
