@@ -50,4 +50,4 @@ CMD groupadd --gid ${DEV_GROUPS} ${DEV_GROUP} && \
  useradd --gid ${DEV_GROUPS} --uid ${DEV_UID} ${DEV_USER} && \
  mkdir /home/${DEV_USER} && \
  chown ${DEV_USER}:${DEV_GROUP} /home/${DEV_USER} && \
- sudo -H -u ${DEV_USER} bash -c ./build.sh ${ANDROID_HOME}
+ sudo -H -u ${DEV_USER} bash -c "./build.sh ${ANDROID_HOME}"
