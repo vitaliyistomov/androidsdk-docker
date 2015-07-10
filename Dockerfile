@@ -42,6 +42,7 @@ RUN echo "no" | android create avd \
 # Cleaning
 RUN apt-get clean
 
-# GO to workspace
-RUN mkdir -p /opt/workspace
-WORKDIR /opt/workspace
+VOLUME ["/android-build"]
+WORKDIR /android-build
+
+CMD ./build.sh
