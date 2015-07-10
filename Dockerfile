@@ -27,9 +27,7 @@ ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 # Install sdk elements
-#COPY tools /opt/tools
-ENV PATH ${PATH}:${ANDROID_HOME}/tools
-RUN echo y | android update sdk --all --no-ui --filter platform-tools,tools,build-tools-22,build-tools-22.0.1,android-22,addon-google_apis_x86-google-22,extra-android-support,extra-android-m2repository,extra-google-m2repository,extra-google-google_play_services,sys-img-armeabi-v7a-android-22
+RUN echo y | android update sdk --all --no-ui --filter platform-tools,build-tools-22.0.1,android-22,addon-google_apis_x86-google-22,extra-android-support,extra-android-m2repository,extra-google-m2repository,extra-google-google_play_services,sys-img-armeabi-v7a-android-22
 
 # Create emulator
 RUN echo "no" | android create avd \
