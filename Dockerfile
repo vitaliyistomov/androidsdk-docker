@@ -45,7 +45,5 @@ RUN apt-get clean
 VOLUME ["/android-build"]
 WORKDIR /android-build
 
-RUN groupadd ${DEV_GROUPS} \
-  && useradd --gid ${DEV_GROUPS} ${DEV_UID}
-USER jenkins
-CMD ./build.sh
+# Create jenkins user and run the build script from it's name
+CMD groupadd ${DEV_GROUPS} && useradd --gid ${DEV_GROUPS} ${DEV_UID} && sudo -H -uid @{DEV_UID} bash -c ./build.sh
