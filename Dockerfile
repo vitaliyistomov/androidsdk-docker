@@ -46,6 +46,8 @@ VOLUME ["/android-build"]
 WORKDIR /android-build
 
 # Create jenkins user and run the build script from it's name
+# This ensures, that all temporary and resulting binaries will have jenkins
+# user as owner and will not break workspace cleanup procedures.
 CMD groupadd --gid ${DEV_GROUPS} ${DEV_GROUP} && \
  useradd --gid ${DEV_GROUPS} --uid ${DEV_UID} ${DEV_USER} && \
  mkdir /home/${DEV_USER} && \
