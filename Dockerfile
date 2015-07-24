@@ -27,17 +27,17 @@ ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 # Install sdk elements
-RUN (while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --filter tool,platform-tool,platform,extra,add-on,system-image
+RUN (while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --filter tools,platform-tools,build-tools-22.0.1,android-22,sys-img-x86_64-android-22,extra-android-m2repository,extra-google-m2repository
 
 # Create emulator
-RUN echo "no" | android create avd \
-                --force \
-                --device "Nexus 5" \
-                --name test \
-                --target android-22 \
-                --abi armeabi-v7a \
-                --skin WVGA800 \
-                --sdcard 512M
+#RUN echo "no" | android create avd \
+#                --force \
+#                --device "Nexus 5" \
+#                --name test \
+#                --target android-22 \
+#                --abi armeabi-v7a \
+#                --skin WVGA800 \
+#                --sdcard 512M
 
 # Cleaning
 RUN apt-get clean
