@@ -27,12 +27,12 @@ ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 # Install sdk elements
-RUN echo y && echo y && echo y && echo y && echo y | android update sdk --no-ui --filter tool
-RUN echo y && echo y && echo y && echo y && echo y | android update sdk --no-ui --filter platform-tool
-RUN echo y && echo y && echo y && echo y && echo y | android update sdk --no-ui --filter platform
-RUN echo y && echo y && echo y && echo y && echo y | android update sdk --no-ui --filter extra
-RUN echo y && echo y && echo y && echo y && echo y | android update sdk --no-ui --filter add-on
-RUN echo y && echo y && echo y && echo y && echo y | android update sdk --no-ui --filter system-image
+RUN (echo y; echo y; echo y; echo y; echo y) | android update sdk --no-ui --filter tool
+RUN (echo y; echo y; echo y; echo y; echo y) | android update sdk --no-ui --filter platform-tool
+RUN (echo y; echo y; echo y; echo y; echo y) | android update sdk --no-ui --filter platform
+RUN (echo y; echo y; echo y; echo y; echo y) | android update sdk --no-ui --filter extra
+RUN (echo y; echo y; echo y; echo y; echo y) | android update sdk --no-ui --filter add-on
+RUN (echo y; echo y; echo y; echo y; echo y) | android update sdk --no-ui --filter system-image
 
 # Create emulator
 RUN echo "no" | android create avd \
