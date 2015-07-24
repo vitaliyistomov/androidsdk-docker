@@ -27,7 +27,7 @@ ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 # Install sdk elements
-RUN echo y | android update sdk --all --no-ui --filter add-on,extra,platform,platform-tool,system-image,tool
+RUN echo yyyyyy | android update sdk --all --no-ui --filter add-on,extra,platform,platform-tool,system-image,tool
 
 # Create emulator
 RUN echo "no" | android create avd \
