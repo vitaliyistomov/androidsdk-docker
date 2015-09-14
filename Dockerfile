@@ -28,7 +28,7 @@ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 # Install sdk elements
 RUN (while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all --filter tools,platform-tools
-RUN (while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all --filter android-23,build-tools-23.0.0,extra-android-m2repository,extra-google-m2repository
+RUN (while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all --filter android-23,build-tools-23.0.1,extra-android-m2repository,extra-google-m2repository
 #RUN (while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all --filter sys-img-x86_64-android-22
 
 # Create emulator
