@@ -28,7 +28,7 @@ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 # Install sdk elements
 RUN (while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all --filter tools,platform-tools
-RUN (while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all --filter android-24,build-tools-24.0.0,extra-android-m2repository,extra-google-m2repository
+RUN (while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all --filter android-24,build-tools-24.0.2,extra-android-m2repository,extra-google-m2repository
 
 # legacy, not to break older branches
 RUN (while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all --filter android-23,build-tools-23.0.3
